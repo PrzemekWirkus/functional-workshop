@@ -1,5 +1,5 @@
 /**
-    Name: LAMBDA_1 (Functor introduction)
+    Name: CLOSURE_1 (Functor introduction)
     Exercise: Prepare mutable and non-mutable functors and use them with algorithm
 
     Description:
@@ -20,6 +20,7 @@
  */
 
 #include <iostream>
+#include <functional>
 #include <algorithm>
 #include <string>
 #include <vector>
