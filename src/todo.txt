@@ -1,0 +1,7 @@
+1. Explain what people need to do exercise\
+2. Add UT
+3. in git add tag for tag-answers and tag-exercise (HEAD)
+4. Add lside to explain functional in stl and c+11
+5. After each part (lambda, bind...) give slide for exercise screen.
+
+6. Workshop schedule
