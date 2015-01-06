@@ -2,6 +2,9 @@
     Simplified unit testing macro features used to verify workshop exercises.
 */
 
+#include <iostream>
+#include <string.h>
+
 #define CHECK(RESULT)
 #define CHECK_TEXT(RESULT,TEXT)
 #define CHECK_EQUAL(EXPECTED,ACTUAL)

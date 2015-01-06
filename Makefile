@@ -13,7 +13,11 @@ TEST_CONF_OBJ=testconf.o
 %.o: $(SRC)/%.cpp $(SRC)/$(DEPS)
 	$(CPP) -c -o $@ $< $(CFLAGS) $(CPPFLAGS)
 
+# Test configuration rule
 testconf: $(TEST_CONF_OBJ)
+	$(CPP) -o $@ $^ $(CFLAGS) $(CPPFLAGS)
+
+lambda1: lambda1.o
 	$(CPP) -o $@ $^ $(CFLAGS) $(CPPFLAGS)
 
 .PHONY: clean
