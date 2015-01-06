@@ -15,6 +15,7 @@
 #include <vector>
 #include <stdio.h>
 #include "utest.h"
+#include <memory>
 
 using namespace std;
 using namespace std::placeholders;  // _1, _2, _3, _4 ...
@@ -64,6 +65,6 @@ int main(int argc, char *argv[]) {
 
     strsetspace(str);
     cout << '[' << str<< ']' << endl;
-
+    
     return 0;
 }
