@@ -12,6 +12,7 @@
 #include <functional>
 #include <algorithm>
 #include <string>
+#include <string.h>
 #include <vector>
 #include <stdio.h>
 #include "utest.h"
@@ -20,6 +21,9 @@
 using namespace std;
 using namespace std::placeholders;  // _1, _2, _3, _4 ...
 
+namespace {
+    string SPACE_STRING = "                                                                                            ";
+}
 
 int main(int argc, char *argv[]) {
 
@@ -39,11 +43,18 @@ int main(int argc, char *argv[]) {
     //      print_complex(-3, 3);   // prints: (-3, 3)
     //      print_complex(0, 0);    // prints: (0, 0)
 
+    cout << "Task 1..." << endl;
     //std::function<int(int, int)> printf_complex = bind(printf, "(%d, %d)", _1, _2);
-    auto printf_complex = bind(printf, "(%d, %d)", _1, _2);
+    /** UNCOMMENT TASK 1
+    auto printf_complex = // TODO: bind(... ;
     printf_complex(-3, 3);
     printf_complex(0, 0);
     cout << endl;
+    UNCOMMENT */
+
+
+    // ############################################################################################
+
 
     // ### Task 2 ###
     // Create memset's specialization called 'strsetspace' which will replace all characters
@@ -58,13 +69,20 @@ int main(int argc, char *argv[]) {
     //
     // strsetspace(str);
 
+    cout << "Task 2..." << endl;
     char str[] = "ARM Holdings plc (ARM) is a British multinational semiconductor and software design company.";
-    cout << '[' << str<< ']' << endl;
-    memset(str, ' ', strlen(str));
-    auto strsetspace = bind(memset, _1, ' ', bind(strlen, _1));
+    cout << '[' << str << ']' << endl;
 
-    strsetspace(str);
-    cout << '[' << str<< ']' << endl;
-    
+    /** UNCOMMENT TASK 2
+    auto strsetspace = // TODO: bind(...
+    strsetspace(str);   // Execute new function
+
+    cout << '[' << str << ']' << endl;
+    UNCOMMENT */
+
+    CHECK_EQUAL("Task 2 : ",
+        string(str),
+        string("                                                                                            "));
+
     return 0;
 }
