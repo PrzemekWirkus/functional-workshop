@@ -44,7 +44,7 @@ struct func_print {
 template <typename T>
 struct func_upper {
     func_upper(const int _delta) : delta(_delta) {  }
-    T delta;
+    int delta;
     void operator()(T &t) {
         if (t >= 'a' && t <= 'z') {
             t += delta;
@@ -82,13 +82,11 @@ int main(int argc, char *argv[]) {
 
     // ### Task 3 ###
     // Modify functor from Task 2 so it can be used to increment / decrement vector 'vec' values
-    for_each(begin(vec), end(vec), func_upper<string::value_type>(1));
+    for_each(begin(vec), end(vec), func_upper<vector<int>::value_type>(1));
 
     // ### Task 4 ###
     // Create functor func_sum which will sum each element in vector 'vec'
-    func_sum<vector<int>::value_type> fs;
-    cout << endl << fs.count << endl;
-    fs = for_each(begin(vec), end(vec), fs);
+    func_sum<vector<int>::value_type> fs = for_each(begin(vec), end(vec), func_sum<vector<int>::value_type>());
     cout << endl << fs.count << endl;
 
     // Print your result

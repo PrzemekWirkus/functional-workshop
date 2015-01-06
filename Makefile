@@ -17,7 +17,7 @@ TEST_CONF_OBJ=testconf.o
 testconf: $(TEST_CONF_OBJ)
 	$(CPP) -o $@ $^ $(CFLAGS) $(CPPFLAGS)
 
-lambda1: lambda1.o
+closure1: closure1.o
 	$(CPP) -o $@ $^ $(CFLAGS) $(CPPFLAGS)
 
 .PHONY: clean
